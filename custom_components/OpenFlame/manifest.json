@@ -1,0 +1,7 @@
+{
+  "name": "Open Flame Integration",
+  "content_in_root": false, // If files are in a subdirectory (e.g., custom_components/my_integration/)
+  "domains": ["sensor", "switch"], // For integrations
+  "homeassistant": "2024.10.0", // Min HA version
+  "issue_tracker": "github.com"
+}
