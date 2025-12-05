@@ -1,7 +1,10 @@
 {
-  "name": "Open Flame Integration",
-  "content_in_root": false, // If files are in a subdirectory (e.g., custom_components/my_integration/)
-  "domains": ["sensor", "switch"], // For integrations
-  "homeassistant": "2024.10.0", // Min HA version
-  "issue_tracker": "github.com"
+  "domain": "my_simple_switch",
+  "name": "My Simple Switch",
+  "documentation": "https://github.com/your_username/my_simple_switch",
+  "issue_tracker": "https://github.com/your_username/my_simple_switch/issues",
+  "dependencies": [],
+  "codeowners": ["@your_username"],
+  "requirements": [],
+  "version": "1.0.0"
 }
