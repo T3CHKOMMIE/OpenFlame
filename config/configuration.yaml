@@ -21,6 +21,9 @@ logger:
 automation: !include automations.yaml
 
 
+# configuration.yaml
+switch:
+  - platform: openflame
 
 rest_command:
   flame_on_request:
