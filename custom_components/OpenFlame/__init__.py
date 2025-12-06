@@ -1,16 +1,11 @@
-"""The OpenFlame Integration."""
-import logging
+# custom_components/OpenFlame/__init__.py
 
 from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType
+from homeassistant.config_entries import ConfigEntry
 
-_LOGGER = logging.getLogger(__name__)
-
-DOMAIN = "openflame"
-
-async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
-    """Set up the OpenFlame component."""
-    _LOGGER.info("OpenFlame is setting up!")
-    # Store configuration or perform other setup tasks here
-    hass.data[DOMAIN] = {} # Example: store data for your component
+async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
+    """Set up OpenFlame from a config entry."""
+    hass.async_create_task(
+        hass.config_entries.async_forward_entry_setup(entry, "button")
+    )
     return True

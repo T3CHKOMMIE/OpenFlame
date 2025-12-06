@@ -21,10 +21,6 @@ logger:
 automation: !include automations.yaml
 
 
-# configuration.yaml
-switch:
-  - platform: openflame
-
 shell_command:
   cmd_flames_on: 'curl "http://magikflamedemo.t3chkommie.com/flameson"'
   cmd_flames_off: 'curl "http://magikflamedemo.t3chkommie.com/flamesoff"'
