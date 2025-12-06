@@ -1,0 +1,29 @@
+# https://www.home-assistant.io/integrations/default_config/
+#default_config:
+history:
+logbook:
+zeroconf:
+network:
+
+# https://www.home-assistant.io/integrations/homeassistant/
+homeassistant:
+  debug: true
+
+# https://www.home-assistant.io/integrations/logger/
+logger:
+  default: info
+  logs:
+    custom_components.openflame: debug
+    homeassistant.components.bluetooth: debug
+    homeassistant.components.zeroconf: debug
+    homeassistant.components.network: debug
+
+automation: !include automations.yaml
+
+
+
+rest_command:
+  flame_on_request:
+    url: "http://magikflamedemo.t3chkommie.com/flameon"
+  flame_off_request:
+    url: "http://magikflamedemo.t3chkommie.com/flame0ff"

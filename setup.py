@@ -8,5 +8,5 @@ setup(
     license='',
     author='T3CHKOMMIE',
     author_email='',
-    description='OpenSource Alternative for Electronic Fireplaces'
+    description='OpenSource Alternative for Electronic Fireplaces', requires=['homeassistant']
 )
