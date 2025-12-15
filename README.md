@@ -25,6 +25,20 @@ I had the biggest problem with needing to touch the TFT screen AND push the powe
 ## What I did
 After days of fumbling with VLC on newer images on the RPI3B as well as trying to get newer code to run on the orginial image, I settled for Video Looper. 
 
-My image still uses OMXPlayer but does so with a slightly newer (but still old) OS that leverages the GPU acceloration on the RPI3B. I wrote an extremly bare bones API script that plays one video (the flame video that i prefer), creates the BT and Serial connection with the log set, and exposes those endpoints over rest_commands in Home assistant. The result is that my fireplace works well enough with video and audio and I can now control the main features of the appliance via a custom card in Home Assistant. I run the home assistant app on my android phone, so there isnt a need for me to have another android app.
+My image still uses OMXPlayer but does so with a slightly newer (but still old) OS that leverages the GPU acceloration on the RPI3B. I wrote an extremly bare bones API script that plays one video (the flame video that i prefer), creates the BT and Serial connection with the log set, and exposes those endpoints over rest_commands in Home assistant. The result is that my fireplace works well enough with video and audio and I can now control the main features of the appliance via a custom card in Home Assistant. I run the home assistant app on my android phone, so there isnt a need for me to have another android app. I couldnt get pycec to work becuase of dependancy problems with RPI Buster and the repos being depricated so I solved th TV Power On problem by simply rebooting the RPI. When the PI reboots, it reinitializes the HDMI connection and this brings the TV out of sleep and promptly starts the flame video.
+
+## What doesnt work
+Remember, I wanted my fireplace to work the way I wanted it to, so this came at some (temporary?) tradeoffs.
+
+1. iOS app
+2. TFT display... just remove it or use a different RPI like I did. the TFT screen flickers and isnt the best at picking up presses. If you use a different RPI, find a safe place to mount it where it doesnt ground/short itself out on the metal insert. You'll notice the orginal RPI has copious ammounts of electrical tape all over it.
+3. Volume Control (you'll need the fire tv remote for that)
+4. Aquarium video, or multiple videos (i just hard coded the one video i liked)
+5. Auto Discovery of BT logs - Just use something to find the MAC of the device with MFL name and put that MAC in the server.py script.
+6. Nature Sounds
+7. Probably other things for now?
+
+   
+Bonus: I added a w1 Themal Sensor to the RPI and HA to monitor the heat from the space heater.
 
 
