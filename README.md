@@ -41,4 +41,6 @@ Remember, I wanted my fireplace to work the way I wanted it to, so this came at 
    
 Bonus: I added a w1 Themal Sensor to the RPI and HA to monitor the heat from the space heater.
 
-
+![OpenFlame Logo](images/surround.png)
+![OpenFlame Logo](images/OpenFlame-HomeAssistant.png)
+![OpenFlame Logo](video/boot.mp4)
