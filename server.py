@@ -5,7 +5,7 @@ import serial
 from urllib.parse import urlparse, parse_qs
 import subprocess
 from w1thermsensor import W1ThermSensor, Sensor, Unit
-
+import board, neopixel
 # Data store (in-memory list of dictionaries)
 
 
@@ -44,6 +44,29 @@ class MyRequestHandler(http.server.SimpleHTTPRequestHandler):
         if path == "/api/posts":
             self.do_RES(200, {"Nothing":"To See Here"})
 
+        elif path == "/ledOn":
+            try:
+                print("Turning LED on!")
+                pixels1 = neopixel.NeoPixel(board.D18, 188, brightness=1)
+                if "color" in query_params:
+                    data = query_params['color'][0].split(",")
+                    pixels1.fill((int(data[0]), int(data[1]), int(data[2])))
+                else:
+                    pixels1.fill((255, 200, 100))
+                self.do_RES(200, {"Success": True, "Params": query_params})
+            except Exception as E:
+                self.do_RES(400, {"Error": str(E)})
+                print("Error Turning On LED...\n" + str(E))
+
+        elif path == "/ledOff":
+            try:
+                print("Turning LED Off!")
+                pixels1 = neopixel.NeoPixel(board.D18, 188, brightness=1)
+                pixels1.fill((0, 0, 0))
+                self.do_RES(200, {"Success": True})
+            except Exception as E:
+                self.do_RES(400, {"Error": str(E)})
+                print("Error Turning Off LED...\n" + str(E))
 
         elif path == "/temp":
             try:
