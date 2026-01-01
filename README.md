@@ -40,7 +40,7 @@ Remember, I wanted my fireplace to work the way I wanted it to, so this came at 
 
    
 Bonus: I added a w1 Themal Sensor to the RPI and HA to monitor the heat from the space heater.
-
+I added addressable RGB leds. I need to disable PWM audio from omxplayer to prevent the analog audio from messing with the led signal. -o hdmi needs to be added to the extra attributes for the cmd for omxplayer
 ![Open surround](images/surround.png)
 ![OpenFlame HA](images/OpenFlame-HomeAssistant.png)
 ![OpenFlame Logo](video/boot.mp4)
